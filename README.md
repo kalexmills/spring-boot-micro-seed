@@ -1,7 +1,7 @@
 # spring-boot-micro-seed
 ### Java 11 + Spring Boot + Docker + Kubernetes + Helm
 
-Just a simple seed project combining a basic Spring Boot application with Java 11, Docker, Kubernetes Helm.
+Just a simple seed project combining a basic Spring Boot application with Java 11, Docker, Kubernetes, and Helm.
 Built on top of [distroless by Google](https://github.com/GoogleContainerTools/distroless).
 
 **Deploy to dev from day one!**
