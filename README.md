@@ -4,7 +4,7 @@
 Just a simple seed project combining a basic Spring Boot application with Java 11, Docker, Kubernetes Helm.
 Built on top of [distroless by Google](https://github.com/GoogleContainerTools/distroless).
 
-Deploy to dev from day one!
+**Deploy to dev from day one!**
 
 ### Instructions
 **Build with `mvn clean install`.**
@@ -35,3 +35,8 @@ Port forward your service based on the deployment name above. With name 'dull-bu
 $ curl http://localhost:8080/healthz
 pass
 ```
+
+### Tips
+
+The helm charts included here are intended as a starter deployment for local/development environments.
+Do not package *production* helm charts into your source repository, like we have done here. Important charts should be managed in a separate repository, to decouple production configuration from the app repository itself.
