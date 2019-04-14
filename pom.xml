@@ -17,6 +17,7 @@
 	<properties>
 		<java.version>11</java.version>
 		<docker.image.prefix>kalexmills</docker.image.prefix>
+        <helm.chart.version>0.0.1</helm.chart.version>
 	</properties>
 
 	<dependencies>
@@ -80,6 +81,32 @@
 						<goals>
 							<goal>build</goal>
 						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>com.kiwigrid</groupId>
+				<artifactId>helm-maven-plugin</artifactId>
+				<version>4.2</version>
+				<configuration>
+					<chartDirectory>${project.basedir}/src/main/helm</chartDirectory>
+					<chartVersion>${helm.chart.version}</chartVersion>
+					<outputDirectory>${project.build.directory}</outputDirectory>
+				</configuration>
+				<executions>
+					<execution>
+						<id>package-helm-chart</id>
+						<goals>
+							<goal>package</goal>
+						</goals>
+						<phase>install</phase>
+					</execution>
+					<execution>
+						<id>lint-helm-chart</id>
+						<goals>
+							<goal>lint</goal>
+						</goals>
+						<phase>test</phase>
 					</execution>
 				</executions>
 			</plugin>
